@@ -1,0 +1,32 @@
+JSOC IS DOWN, STILL CAN DOWNLOAD FILES
+
+#First, download level1 files to /Volumes/alisdair/IRIS_LEVEL1_DARKS
+
+https://jsoc1.stanford.edu/iris/2024/12/
+
+wget --no-check-certificate -r --no-parent https://jsoc1.stanford.edu/iris/2024/12/18/14/
+
+
+OR
+
+wget --no-check-certificate -r --no-parent https://umbra.nascom.nasa.gov/iris/iris_data/level1/2024/11/20/H1400/
+
+#Clean up and organize, make sure you only have the files you need
+
+#rename with the following python code
+
+import os
+flist = os.listdir('./')
+
+for fils in flist:
+    nout = 'iris.lev1.'+fils[4:8]+'-'+fils[8:10]+'-'+fils[10:12]+'T'+fils[13:19]+'Z.123456789.image_lev1.fits'
+    #print(nout)
+    os.rename(fils,nout)
+
+#FOR FIXING MISTAKES   
+newflist = os.listdir('./')         
+for tt in newflist:
+    nous = tt[0:27]+tt[29:]
+    os.rename(tt, nous) 
+
+#YOU WILL NEED TO MANUALLY create level0 directories, then should run normally

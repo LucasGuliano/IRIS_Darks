@@ -1,0 +1,11 @@
+
+IRIS Hot Pixels are grabbed from SAO at:
+https://helio.cfa.harvard.edu/IRIS/IRIS_plots/
+
+Which is synced from
+kurasuta-0-0:/var/www/projects/IRIS/public_html/IRIS_plots/
+
+With the www-data account
+
+At SAO, speak with IT about getting the account info to use this account at this location
+==================================================================
